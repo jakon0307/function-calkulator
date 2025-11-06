@@ -1,24 +1,39 @@
-var raqamlar = [];
-var kodlar = ["90","91","93","94","95","97","98","99"];
+var number1 = parseFloat(prompt("1-sonni kriting"));
+var actions = prompt("Amallarni kiriting M: +, -, *, /");
+var number2 = parseFloat(prompt("2-sonni kriting"));
 
-for (var i = 0; i < 1000; i++) {
-  var kod = kodlar[Math.floor(Math.random() * kodlar.length)];
-  var son = Math.floor(1000000 + Math.random() * 9000000);
-  raqamlar.push(kod + son);
+function calculator(a, b, actions) {
+        return a + b;
+}
+function calMar(a, b, actions) {
+        return a - b
+}
+function calDes(a, b, actions) {
+    return a * b;
+}
+function calDed(a, b, actions) {
+        return a / b;
+    
 }
 
-var res = prompt("9 xonali raqam kiriting (masalan: 901234567)");
 
-if (res.length !== 9) {
-  alert(" Raqam 9 xonali bo‘lishi kerak!");
-} 
-else if (res.slice(0, 2) === "92" || res.slice(0, 2) === "96") {
-  alert(" Xato! 92 yoki 96 bilan boshlanadi!");
-} 
-else if (raqamlar.includes(res)) {
-  alert("Raqam ro‘yxatda bor");
-} 
-else {
-  alert("Raqam ro‘yxatda yoq");
+
+
+if (actions === "+") {
+  console.log(calculator(number1, number2));
 }
-console.log(raqamlar);
+ else if (actions === "-") {
+  natija = calMar(number1, number2);
+}
+ else if (actions === "*") {
+  natija = calDes(number1, number2);
+}
+ else if (actions === "/") {
+  natija = calDed(number1, number2);
+}
+ else {
+  natija = "Notog'ri amal";
+}
+  
+
+console.log("Natija", natija);
